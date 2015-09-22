@@ -10,6 +10,7 @@ gem 'activereplica'
 
 ## Usage
 
+```
 # register the master
 ActiveReplica.register(ActiveRecord::Base)
 
@@ -26,3 +27,4 @@ ActiveReplica.using(:replica1) do
     puts "user: #{user.name} has #{user.posts.length} posts"
   end
 end
+```
