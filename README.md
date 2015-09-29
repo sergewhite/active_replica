@@ -11,20 +11,18 @@ gem 'activereplica'
 ## Usage
 
 ```
-# register the master
-ActiveReplica.register(ActiveRecord::Base)
+# add named replicas
+>> ActiveReplica.add_replica(:follower_1, adapter: "sqlite3", database: "replica1.sqlite")
+>> ActiveReplica.add_replica(:follower_2, adapter: "sqlite3", database: "replica2.sqlite")
 
-# add a replica
-ActiveReplica.add_replica(:replica1, { adapter: "sqlite3", database: "tmp/replica1.sql" })
+# get a list of replicas
+>> ActiveReplica.replicas
+=> [:follower_1, :follower_2]
 
-# make sure the connection pools are all established
-ActiveReplica.establish_connections
-
-# use the replica
-
-ActiveReplica.using(:replica1) do
-  User.includes(:posts).find_each do |user|
-    puts "user: #{user.name} has #{user.posts.length} posts"
-  end
-end
+# use a specified replica
+>> ActiveReplica.with_replica(:follower_1) do
+>>   User.count
+>> end
 ```
+
+That's it
