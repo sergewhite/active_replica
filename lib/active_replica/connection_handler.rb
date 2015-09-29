@@ -71,7 +71,7 @@ module ActiveReplica
     # to enable clean up methods
     #
     private def connection_handler_list
-      @shard_to_connection_handler.values
+      @shard_to_connection_handler.values + [default_connection_handler].compact
     end
 
     # the connection pool list is used for various cleaning tasks
