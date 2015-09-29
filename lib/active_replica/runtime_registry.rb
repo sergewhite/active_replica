@@ -9,9 +9,9 @@ module ActiveReplica
   class RuntimeRegistry # :nodoc:
     extend ActiveSupport::PerThreadRegistry
 
-    attr_accessor :connection_handler
+    attr_accessor :active_replica, :connection_handler
 
-    [:connection_handler].each do |val|
+    [:active_replica, :connection_handler].each do |val|
       class_eval %{ def self.#{val}; instance.#{val}; end }, __FILE__, __LINE__
       class_eval %{ def self.#{val}=(x); instance.#{val}=x; end }, __FILE__, __LINE__
     end

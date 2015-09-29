@@ -35,6 +35,12 @@ module ActiveReplica
       @shard_to_connection_handler[shard] = connection_handler
     end
 
+    # get the list of shard names
+    #
+    def shards
+      @shard_to_connection_handler.keys
+    end
+
     # get the shard with the connection handler
     #
     def get_shard(shard)
