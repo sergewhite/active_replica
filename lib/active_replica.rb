@@ -1,6 +1,7 @@
 require 'active_replica/version'
 require 'active_replica/connection_handler'
 require 'active_replica/railtie' if defined?(Rails)
+require 'active_support/core_ext/module/attribute_accessors' # mattr_accessor
 
 module ActiveReplica
   mattr_accessor :connection_handler
