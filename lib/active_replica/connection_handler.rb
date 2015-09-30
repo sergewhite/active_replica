@@ -86,7 +86,7 @@ module ActiveReplica
     # delegate establishing a connection to the active handler
     #
     delegate :establish_connection,
-             to: :active_replica_connection_handler
+             to: :active_connection_handler
 
     # the active connection method should just delegate
     #
