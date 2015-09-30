@@ -26,3 +26,19 @@ gem 'activereplica'
 ```
 
 That's it
+
+## Logging
+
+Replica logging is not enabled by default.
+
+If you want it, you can just require it.
+
+```
+require 'active_replica/logging'
+```
+
+Then your logs will get decorated.
+
+```
+[Replica: follower_1]   (6.6ms)  SELECT COUNT(*) FROM "users"
+```
