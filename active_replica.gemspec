@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Matthew Rudy Jacobs"]
   spec.email         = ["matthewrudyjacobs@gmail.com"]
 
-  spec.summary       = %q{Simple, peformant Read-Only replicas with ActiveRecord}
+  spec.summary       = %q{Simple, performant Read-Only replicas with ActiveRecord}
   spec.description   = %q{Add shards, and switch between them for key tasks}
   spec.homepage      = "https://github.com/gogovan/active_replica"
   spec.license       = "MIT"
