@@ -5,7 +5,7 @@ ActiveReplica makes it super-easy (and performant) to use a read-only replica wi
 ## Installation
 
 ```ruby
-gem 'activereplica'
+gem 'active_replica'
 ```
 
 ## Usage
